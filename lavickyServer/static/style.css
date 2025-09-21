@@ -41,3 +41,26 @@ h1{
 #map{
     height: 750px;
 }
+
+/* Bench popup styling */
+.bench-popup {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.bench-popup .leaflet-popup-content {
+    margin: 10px;
+    line-height: 1.4;
+}
+
+.bench-popup .leaflet-popup-content img {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.bench-popup button {
+    transition: background-color 0.3s ease;
+}
+
+.bench-popup button:hover {
+    background-color: #0056b3 !important;
+}

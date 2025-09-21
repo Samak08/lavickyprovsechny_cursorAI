@@ -23,7 +23,17 @@ fetch("/lavicky")
             let name = item.Name
             let lat = item.Lat;
             let lng = item.Lng
+            let photoPath = item.PhotoPath;
+            
             var marker = L.marker([lat, lng]).addTo(map);
+            
+            // Create popup content with photo if available
+            let popupContent = `<strong>${name}</strong>`;
+            if (photoPath) {
+                popupContent += `<br><img src="/${photoPath}" style="max-width: 200px; max-height: 150px; margin-top: 10px;" alt="Bench photo">`;
+            }
+            
+            marker.bindPopup(popupContent);
             marker.bindTooltip(name, {
                 direction: "bottom",
                 offset: [-15, 30]
